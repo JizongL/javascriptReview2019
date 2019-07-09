@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="main">
+            <p>This is test paragrah 1</p>
+            <p>This is test paragrah 2</p>  
+        </div>
+        <p id='demo'></p>
+
+        <script>
+            let x = document.getElementById('main');
+            let y = x.getElementByTagName('p')
+            document.getElementById('demo').innerHTML = y[0]
+        </script>
+    </body>
+</html>

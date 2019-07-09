@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <div id='demo'></div>
+        <script>
+            function dogFile(color,breed,age,location){
+                this.color = color;
+                this.breed = breed;
+                this.age = age;
+                this.location = location;    
+                }
+            let dog_1 = new dogFile("red","dalmatian","3","NYC")
+            let dog_2 = new dogFile("red","German Sheperd","1","NYC")
+            dogFile.prototype.name='doggie'
+            document.getElementById('demo').innerHTML = dog_1.breed+' is \
+            '+dog_1.color+' and his name is '+dog_1.name;
+            
+
+            
+        </script>
+
+        
+
+        </div>
+
+    </body>
+</html>
