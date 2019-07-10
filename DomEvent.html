@@ -3,18 +3,32 @@
 
 <html>
     <body onload="checkCookie()">
+        <!--mouseover and mouseout-->
+        <div onmouseover='mouseOver(this)' onmouseout='mouseOut(this)' >
+            Mouse over me!
+        </div>
 
+        <div onmousedown="mouseDown(this)" onmouseup="mouseUp(this)">
+            Thank you
+        </div>
         <p id='cookie_status'></p>
 
         <button id='btn'>try it</button>
         <p id='demo'></p>
+
+        <!--mousedown mouseup with image-->
+        
+
         <!--use html attribute-->
         <h1 onclick="this.innerHTML='Ooops!'">
             Click on this text!
         </h1>
 
         <h1 onclick="changeText(this)">Click on this text! It's implemented by Event listener</h1>
-
+        <!--onchange practice, change input letter to uppercase-->
+        <div id='OnChangePractice'>
+            <input id='upperCase' onchange="upperCase()">
+        </div>
         <script>
             function changeText(id){
                 id.innerHTML='Ooops!'
@@ -36,7 +50,27 @@
                 }
                 document.getElementById('cookie_status').innerHTML=text;
             }
+            function upperCase(){
+                let x = document.getElementById('upperCase');
+                x.value = x.value.toUpperCase();
+            }
+            // mouse over and mouse out
+            function mouseOver(id){
+                id.innerHTML = 'Thank you'
+            }
+            function mouseOut(id){
+                id.innerHTML = 'Mouse over me!'
+            }
 
+            // mousedown and mouseup
+            function mouseDown(id){
+                id.style.backgroundColor = "#1ec5e5"
+                id.innerHTML = 'Relase me'
+            }
+            function mouseUp(id){
+                id.style.backgroundColor = "#D94A38"
+                id.innerHTML = 'Thank you'
+            }
         </script>
     </body>
 </html>
