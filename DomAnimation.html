@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=divice-width">
+        <title>animation exercise</title>
+        <link href='animation.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <p><button onclick='myMove()'>Click me</p>
+        <div id='container'>
+            <div id='animate'></div>
+        </div>
+
+        <p><button onclick='myMoveCircle()'>Click me</p>
+            <div id='container_circle'>
+                <div id='animate_circle'></div>
+            </div>
+
+
+    </body>
+    <script>
+        // elem.style.top,elem.style.left, setInterval, clearInterval
+        // The above are key elements
+        function myMove(){
+            let elem=document.getElementById('animate');
+            let pos = 0;
+            let id = setInterval(frame,5);
+            function frame(){
+                if(pos===350){
+                    clearInteval(id);
+                }else{
+                    pos++;
+                    elem.style.top=pos+"px";
+                    elem.style.left=pos+"px";
+                }
+            }
+        
+
+        }
+        function myMoveCircle(){
+            let elem=document.getElementById('animate_circle')
+            let pos=0;
+            let id = setInterval(frame_circle,5)
+            function frame_circle(){
+                if(pos===283){
+                    clearInterval(id);
+                }else{
+                    pos++;
+                    ele.style.top=pos
+                }
+            }
+        }
+    </script>
+</html>
