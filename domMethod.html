@@ -5,12 +5,33 @@
             <p>This is test paragrah 1</p>
             <p>This is test paragrah 2</p>  
         </div>
-        <p id='demo'></p>
-
+        <p id="demo"></p>
+        <form id="frm1" action="/action_page.php">
+            First name: <input type=text name='fname'value='John'><br>
+            Last name: <input type=text name='lname'value='Lee'><br><br>
+            <input type="submit" value="submit">
+        </form>
+        <p>Try clicking the try button</p>
+        
+        <button onclick='clickFunction()'>Try it</button>
+        <br>
+        <div id='demo'></div>
         <script>
-            let x = document.getElementById('main');
-            let y = x.getElementByTagName('p')
-            document.getElementById('demo').innerHTML = y[0]
+            let x = document.getElementById("main");
+            // be careful, it's plural, getElementsByTagName, compared to 
+            // singular getElementById
+            let y = x.getElementsByTagName("p");
+            document.getElementById("demo").innerHTML = y[0].innerHTML;
+            
+            function clickFunction(){
+                let x=document.forms['frm1']
+                let text = ''
+                for(let i=0;i<x.length;i++){
+                    text+=x.elements[i].value+"<br>"
+                }
+                document.getElementById('demo').innerHTML = text;
+            }
         </script>
+        
     </body>
 </html>
