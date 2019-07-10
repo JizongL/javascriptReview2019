@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+
+<html>
+    <body onload="checkCookie()">
+
+        <p id='cookie_status'></p>
+
+        <button id='btn'>try it</button>
+        <p id='demo'></p>
+        <!--use html attribute-->
+        <h1 onclick="this.innerHTML='Ooops!'">
+            Click on this text!
+        </h1>
+
+        <h1 onclick="changeText(this)">Click on this text! It's implemented by Event listener</h1>
+
+        <script>
+            function changeText(id){
+                id.innerHTML='Ooops!'
+            }
+            // use HTML DOM assign event.
+            function displayDate(){
+                document.getElementById('demo').innerHTML = Date()
+                
+            }
+            document.getElementById('btn').onclick = displayDate;
+            // use navigator.cookieEnabled to check cookie status, assign
+            // function to onload in body tag, print result to p tag with 'cookie_status'
+            function checkCookie(){
+                let text = "";
+                if(navigator.cookieEnabled==true){
+                    text = "Cookies are enabled"
+                }else{
+                    text = "Cookie are not enabled"
+                }
+                document.getElementById('cookie_status').innerHTML=text;
+            }
+
+        </script>
+    </body>
+</html>
