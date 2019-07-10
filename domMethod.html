@@ -5,7 +5,9 @@
             <p>This is test paragrah 1</p>
             <p>This is test paragrah 2</p>  
         </div>
-        <p id="demo"></p>
+        <p id="demo-0"></p>
+        <!--practice object collections document.forms[index]-->
+
         <form id="frm1" action="/action_page.php">
             First name: <input type=text name='fname'value='John'><br>
             Last name: <input type=text name='lname'value='Lee'><br><br>
@@ -15,13 +17,18 @@
         
         <button onclick='clickFunction()'>Try it</button>
         <br>
-        <div id='demo'></div>
+        <div id='demo-1'></div>
+        
+        <!--document.scripts-->
+        <div id='demo-2'></div>
+        
+        
         <script>
             let x = document.getElementById("main");
             // be careful, it's plural, getElementsByTagName, compared to 
             // singular getElementById
             let y = x.getElementsByTagName("p");
-            document.getElementById("demo").innerHTML = y[0].innerHTML;
+            document.getElementById("demo-0").innerHTML = y[0].innerHTML;
             
             function clickFunction(){
                 let x=document.forms['frm1']
@@ -29,9 +36,10 @@
                 for(let i=0;i<x.length;i++){
                     text+=x.elements[i].value+"<br>"
                 }
-                document.getElementById('demo').innerHTML = text;
-            }
+                document.getElementById('demo-1').innerHTML = text;
+            }                      
         </script>
+        
         
     </body>
 </html>
